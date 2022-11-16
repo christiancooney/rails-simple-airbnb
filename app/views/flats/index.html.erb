@@ -1,0 +1,25 @@
+
+<div class="container text-center">
+<header>
+<h1>Flats</h1>
+</header>
+  <div class="card d-flex justify-content-between m-3 p-3 mt-5">
+  <div class="card-body">
+    <ol class="m-3 p-3 mt-5">
+
+      <% @flats.each do |flat| %>
+        <li class="card w-50px p-3"><%= link_to flat.name, flat_path(flat)%></li>
+        <li class="card w-50px p-3"><%= flat.address%></li>
+        <li class="card w-50px p-3"><%= flat.description%></li>
+        <li class="card w-50px p-3"><%= flat.price_per_night%>Price per night: €</li>
+        <li class="card w-50px p-3"><%= flat.number_of_guests%> Number of guests: </li>
+        <button><%= link_to "More details", flat_path(flat)%></button>
+       <% end %>
+  </ol>
+    </div>
+    </div>
+
+<div class="card text-center">
+<%# <button class="text-center"><%= link_to "Add a new flat", new_flat_path %></button> %>
+</div>
+</div>
